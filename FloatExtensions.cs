@@ -16,4 +16,8 @@ public static class FloatExtensions {
         }
         return Mathf.Repeat(Mathf.Lerp(a, b, t), circumference);
     }
+
+    public static float ExpDecay(this float a, float b, float decay, float dt) {
+        return b + (a - b) * Mathf.Exp(-decay * dt);
+    }
 }
